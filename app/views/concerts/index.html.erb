@@ -1,0 +1,22 @@
+<h2>All concerts</h2>
+
+
+
+<section class="main-content">
+	<ul>
+		<% @concerts.each do |concert| %>
+			<li>
+			<% if concert.logo.present? %>
+				<span><%= image_tag concert.logo.url(:thumb) %></span> 
+				<h4><%= concert.band %></h4>
+				<span><%= concert.city %></span><span>(<%= concert.date %>)</span>
+			<% end %>
+			<%= link_to("Read more...", concert_path(concert.id)) %>
+			</li>
+		<% end %>
+	</ul>
+</section>
+
+<aside class="options">
+	<span><%= link_to("Add new concert to the calendar", new_concert_path) %></span>
+</aside>
