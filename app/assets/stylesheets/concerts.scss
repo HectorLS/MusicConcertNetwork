@@ -1,3 +1,21 @@
 // Place all the styles related to the concerts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "variables";
+
+
+nav.navbar--top {
+	background-color: $basecolor;
+	border-bottom: 3px $bcdark solid;
+}
+
+nav.navbar--top ul.navbar--top__list a.nav--link {
+	background-color: $basecolor;
+
+	&:hover {
+		
+	}
+}
+
