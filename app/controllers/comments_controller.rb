@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 		@concert = Concert.find params[:concert_id]
 		@comment = @concert.comments.new comment_params
 		if @comment.save
-			redirect_to redirect_to concert_path(@concert.id)
+			redirect_to concert_path(@concert.id)
 		else
 			render 'new'
 		end

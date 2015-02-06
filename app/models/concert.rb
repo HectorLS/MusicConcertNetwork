@@ -8,4 +8,15 @@ class Concert < ActiveRecord::Base
 	validates :date, presence: true
 	validates :price, presence: true, numericality: true
 
+
+	def self.actual_month
+		from = Time.now.in_time_zone.beginning_of_month
+		to = Time.now.in_time_zone.end_of_month
+		where(date: from..to)
+	end
+
+	def self.top_commented
+	end
+
+
 end

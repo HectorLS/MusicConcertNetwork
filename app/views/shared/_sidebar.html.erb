@@ -1,0 +1,17 @@
+<h3>Current month</h3>
+
+<table class="table">
+	<% @current_month_concerts.each do |current_concert| %>
+		<thead>
+			<tr>
+				<th><%= link_to(current_concert.band, concert_path(current_concert.id))%></th>
+			</tr>
+		</thead>
+		<tbody>
+			<td><%= current_concert.city %></td>
+			<td><%= current_concert.date %></td>
+		</tbody>
+
+	<% end %>
+</table>
+

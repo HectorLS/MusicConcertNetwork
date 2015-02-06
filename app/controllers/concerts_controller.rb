@@ -4,6 +4,7 @@ def index
 	# @pop_concerts = Concert.popular
 	# @month_concerts = Concert.this_month(actual_month)
 	@concerts = Concert.all
+	@top_comments_concerts = Concert.top_commented
 end
 
 def show
@@ -38,10 +39,8 @@ def update
 		end
 end
 
-
 def destroy
 end
-
 
 private
 def concert_params

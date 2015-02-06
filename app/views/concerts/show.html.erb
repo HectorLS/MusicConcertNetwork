@@ -24,6 +24,15 @@
   </div>
 </div>
 
+<% @concert.comments.each do |comment| %>
+  <li><%= comment.username %></li>
+  <li><%= comment.comment %></li>
+<% end %>
+
+
+
+
+
 
 <aside class="options">
 	<span><%= link_to("Back to concerts", concerts_path) %></span>
