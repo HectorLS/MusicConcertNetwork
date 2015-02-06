@@ -24,6 +24,18 @@ def create
 end
 
 def edit
+	@concert = Concert.find params[:id]
+	render 'new'
+end
+
+def update
+	@concert = Concert.find params[:id]
+		@concert.update_attributes concert_params
+		if @concert.save
+			redirect_to concert_path(@concert.id)
+		else
+			render 'new'
+		end
 end
 
 

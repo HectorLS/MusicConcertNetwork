@@ -1,7 +1,30 @@
-<h1> Thats your entry</h1>
 
-<h3><%= @concert.band %></h3>
-<p><%= @concert.description %></p>
-<span class="concert__date"> <%= @concert.date %></span><span> <%= @concert.price %>€</span>
-<span><%= @concert.city %></span><span><%= @concert.venue %></span>
+<div class="media">
+  <div class="media-left media-top">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= @concert.band %></h4>
+		<p>
+			<%= @concert.description %>
+		</p>
+    <p>
+    	Location: <span><%= @concert.city %></span> - <span><%= @concert.venue %></span>
+    	<br>
+	    <span class="concert__date"> <%= @concert.date %></span>
+	    <br>
+	    <span>Price: <%= @concert.price %>€</span>
+    </p>
+    <p>
+      <%= link_to("Edit", edit_concert_path(@concert.id), class: "btn btn-primary", role: "group") %>
+      <%= link_to("Add Comment", new_concert_comment_path(@concert.id), class: "btn btn-warning", role: "group") %>
+    </p>
+  </div>
+</div>
 
+
+<aside class="options">
+	<span><%= link_to("Back to concerts", concerts_path) %></span>
+</aside>

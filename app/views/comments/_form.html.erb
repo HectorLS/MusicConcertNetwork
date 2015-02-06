@@ -1,0 +1,14 @@
+<%= form_for [@concert, @comment] do |f| %>
+	<fieldset>
+		<legend>New concert</legend>
+		<div class="text">
+			<%= f.label :username %>
+			<%= f.text_field :username, placeholder: "Your username" %>
+		</div>
+		<div class="textarea">
+			<%= f.label :comment %> <br>
+			<%= f.text_area :comment, placeholder: "Comment here", id: "textarea" %>
+		</div>
+		<%= f.submit 'Add comment' %>
+	</fieldset>
+<% end %>

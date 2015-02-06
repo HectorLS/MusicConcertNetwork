@@ -1,15 +1,31 @@
 <h2>All concerts</h2>
-	<ul>
-		<% @concerts.each do |concert| %>
-			<li>
-				<h4><%= concert.band %></h4>
-				<span><%= concert.city %></span><span>(<%= concert.date %>)</span>
-				<%= link_to("Read more...", concert_path(concert.id)) %>
-			</li>
-		<% end %>
-	</ul>
-</section>
+
+<div class="container">
+	<div class="row">
+		<article class="content--listed">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Concert</th>
+						<th>City</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @concerts.each do |concert| %>
+						<tr>
+							<td><%= concert.band %></td>
+							<td><%= concert.city %></td>
+							<td><%= concert.date %></td>
+							<td><%= link_to("Read more...", concert_path(concert.id)) %></td>
+						</tr>
+					<% end %>	
+				</tbody>
+			</table>
+		</article>
+	</div>
+</div>
 
 <aside class="options">
-	<span><%= link_to("Add new concert to the calendar", new_concert_path) %></span>
+	<span><%= link_to("Add new concert to the calendar", new_concert_path, class:"btn btn-primary btn-lg") %></span>
 </aside>

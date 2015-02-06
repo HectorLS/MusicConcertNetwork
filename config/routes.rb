@@ -7,16 +7,7 @@ Rails.application.routes.draw do
 end
 
 
-# CONCERTS
-# Crear nuevos conciertos
-# Each concert a SHOW page
-
-
 # concert_poster
-
-
-
-
 
 
 # Calendar
@@ -32,8 +23,6 @@ end
 # user, comment, concert_id
 
 
-
-# (validate format)
 
 
 # CITIES AVAILABLE

@@ -1,20 +1,33 @@
+
+
+
 <%= form_for [@concert] do |f| %>
-	<%= f.label :band %>
-	<%= f.text_field :band, placeholder: "Band name" %>
-	<%= f.label :description %>
-	<%= f.text_area :description, placeholder: "Description" %>
-	<br>
-	<%= f.label :city %>
-	<%= f.text_field :city %>
+	<fieldset>
+		<legend>New concert</legend>
+		<div class="text">
+			<%= f.label :band %> <br>
+			<%= f.text_field :band, placeholder: "Band name" %>
+		</div>
+		<div class="textarea">
+			<%= f.label :description %> <br>
+			<%= f.text_area :description, placeholder: "Description", id: "textarea" %>
+		</div>
+		<div class="text">
+			<%= f.label :city %>
+			<%= f.text_field :city %>
+			
+			<%= f.label :venue %>
+			<%= f.text_field :venue %>
+		</div>
+		<div class="text">
+			<%= f.label :date %>
+			<%= f.date_field :date %>
 
-	<%= f.label :venue %>
-	<%= f.text_field :venue %>
-	<br>
-	<%= f.label :date %>
-	<%= f.date_field :date %>
-
-	<%= f.label :price %>
-	<%= f.number_field :price, placeholder: "Ticket Price" %>
-	<br>
-	<%= f.submit 'Add concert' %>
+			<%= f.label :price %>
+			<%= f.number_field :price, placeholder: "Ticket Price" %>
+		</div>
+		<%= f.submit 'Add concert' %>
+	</fieldset>
 <% end %>
+
+
